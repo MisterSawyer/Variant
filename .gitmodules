@@ -1,0 +1,6 @@
+[submodule "rapidxml"]
+	path = rapidxml
+	url = https://github.com/discord/rapidxml
+[submodule "Victor"]
+	path = Victor
+	url = https://github.com/BioComputingUP/Victor

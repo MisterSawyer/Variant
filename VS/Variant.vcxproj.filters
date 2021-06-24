@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="code">
+      <UniqueIdentifier>{c2024c8e-dcbb-40b3-b9f4-79a799273f13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\mathematics">
+      <UniqueIdentifier>{a0bdc029-0318-4213-9d7b-b7495fffcd72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\chemistry">
+      <UniqueIdentifier>{e859fef0-0725-40ce-890b-400e4b050ecd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\graphics">
+      <UniqueIdentifier>{ff82bab3-ab93-4ad3-a75b-9db60dffdabb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\graphics\view">
+      <UniqueIdentifier>{13039eb7-9436-4c4a-9b04-cfa8dac6aebe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\graphics\render">
+      <UniqueIdentifier>{9d52b094-240f-4d51-9fe6-688e6693fa4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\events">
+      <UniqueIdentifier>{22d343ff-4c6a-4ef6-a5e2-40420190d664}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\graphics\gui">
+      <UniqueIdentifier>{50dafea7-04e6-49db-ae0e-6b385e75fa4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\graphics\gui\win">
+      <UniqueIdentifier>{b68716cf-2c05-4f90-94db-1da6235a459e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\graphics\gui\interface">
+      <UniqueIdentifier>{e95db4e6-9c16-47ad-a60e-cf3cd7c168db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\log">
+      <UniqueIdentifier>{23d772cf-3fc2-4a36-b91c-624cc7bc8a2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\graphics\gui\blueprint">
+      <UniqueIdentifier>{4ca58f5e-a559-4d50-92cd-68e3477d8ed3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\data">
+      <UniqueIdentifier>{c4df9acd-d6da-40f5-a365-0ad59633a7f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\data\pdb">
+      <UniqueIdentifier>{8afee40e-199c-4500-b8ad-4bf2e3cf2000}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\data\pdb\pdb-reader">
+      <UniqueIdentifier>{a065e4ff-d00e-4c35-93b6-cfb2e75bbe89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\data\fasta">
+      <UniqueIdentifier>{c8318850-2d7c-4df3-9962-4f357757d79c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\data\fasta\fasta-reader">
+      <UniqueIdentifier>{046a157c-e7d5-44ed-8b93-76eb33051d66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\data\sequence">
+      <UniqueIdentifier>{32b27fd9-a949-4d08-9d19-e238792eba1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\data\sequence\sequence-reader">
+      <UniqueIdentifier>{a479e55e-6c6b-44c8-8b4b-e109ec58e79f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\graphics\gui\win\window">
+      <UniqueIdentifier>{1543a8e4-2585-4df6-9d60-26158b699b71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\graphics\gui\win\button">
+      <UniqueIdentifier>{ff34038a-fd67-4bcd-bf2d-00017501a237}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\graphics\gui\interface\window">
+      <UniqueIdentifier>{756a672b-785c-4212-9ebb-2b81c719be4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\graphics\gui\interface\button">
+      <UniqueIdentifier>{9bfcd6ae-e4a9-446f-8345-a57c83ce24e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\graphics\gui\interface\panel">
+      <UniqueIdentifier>{79ca1bae-6372-4a18-bd30-d0117108dd92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\graphics\gui\blueprint\window">
+      <UniqueIdentifier>{1955834b-46e8-46d3-a5e6-1092851be768}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\graphics\gui\blueprint\button">
+      <UniqueIdentifier>{4ccc86fd-fddb-4d67-8bae-76ca9de7c47b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\graphics\gui\blueprint\panel">
+      <UniqueIdentifier>{381f8938-b5f1-4c17-adda-d4a35af6e29b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\graphics\gui\win\panel">
+      <UniqueIdentifier>{298fcd57-63b8-4c60-938c-ef8f366b962c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\graphics\render\shaders">
+      <UniqueIdentifier>{77bdf0d5-011a-48e3-a8e6-8c7089b24b0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\graphics\transformable">
+      <UniqueIdentifier>{be04a83b-e3af-471e-b496-f3dd908fd8a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\graphics\render\mesh">
+      <UniqueIdentifier>{af21a696-dc0e-4fd3-b7a1-8c469f7f1ad4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\graphics\render\scene">
+      <UniqueIdentifier>{15b1a4ea-c886-4778-8461-2b10d30707fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\graphics\render\model">
+      <UniqueIdentifier>{ca6839c0-7ee1-4692-b20d-f9cc8cad6af9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\graphics\render\observer">
+      <UniqueIdentifier>{9e678aec-8e5e-4bde-a856-6f2fa9a88503}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\code\mathematics\mathematics.h">
+      <Filter>code\mathematics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\view\view.h">
+      <Filter>code\graphics\view</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\render\render.h">
+      <Filter>code\graphics\render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\chemistry\chemistry.h">
+      <Filter>code\chemistry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\chemistry\atom.h">
+      <Filter>code\chemistry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\chemistry\atom-types.h">
+      <Filter>code\chemistry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\chemistry\bond.h">
+      <Filter>code\chemistry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\chemistry\model.h">
+      <Filter>code\chemistry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\events\events.h">
+      <Filter>code\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\control\control-win.h">
+      <Filter>code\graphics\gui\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\control\control-interface.h">
+      <Filter>code\graphics\gui\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\log\log.h">
+      <Filter>code\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\control\abstract-gui-factory.h">
+      <Filter>code\graphics\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\control\gui-win-factory.h">
+      <Filter>code\graphics\gui\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\control\control-blueprint.h">
+      <Filter>code\graphics\gui\blueprint</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\control\window-win.h">
+      <Filter>code\graphics\gui\win\window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\control\button-win.h">
+      <Filter>code\graphics\gui\win\button</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\control\window-interface.h">
+      <Filter>code\graphics\gui\interface\window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\control\button-interface.h">
+      <Filter>code\graphics\gui\interface\button</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\control\panel-interface.h">
+      <Filter>code\graphics\gui\interface\panel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\control\window-blueprint.h">
+      <Filter>code\graphics\gui\blueprint\window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\control\button-blueprint.h">
+      <Filter>code\graphics\gui\blueprint\button</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\control\panel-blueprint.h">
+      <Filter>code\graphics\gui\blueprint\panel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\control\panel-win.h">
+      <Filter>code\graphics\gui\win\panel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\transformable\transformable.h">
+      <Filter>code\graphics\transformable</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\render\shader.h">
+      <Filter>code\graphics\render\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\render\cube.h">
+      <Filter>code\graphics\render\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\render\mesh.h">
+      <Filter>code\graphics\render\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\chemistry\pdb.h">
+      <Filter>code\data\pdb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\render\scene.h">
+      <Filter>code\graphics\render\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\render\model.h">
+      <Filter>code\graphics\render\model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\render\observer.h">
+      <Filter>code\graphics\render\observer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\code\mathematics\mathematics.cpp">
+      <Filter>code\mathematics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\log\log.cpp">
+      <Filter>code\log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\main.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\control\control-interface.cpp">
+      <Filter>code\graphics\gui\interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\control\control-win.cpp">
+      <Filter>code\graphics\gui\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\control\abstract-gui-factory.cpp">
+      <Filter>code\graphics\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\control\gui-win-factory.cpp">
+      <Filter>code\graphics\gui\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\view\view.cpp">
+      <Filter>code\graphics\view</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\control\control-blueprint.cpp">
+      <Filter>code\graphics\gui\blueprint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\control\window-win.cpp">
+      <Filter>code\graphics\gui\win\window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\control\button-win.cpp">
+      <Filter>code\graphics\gui\win\button</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\control\window-interface.cpp">
+      <Filter>code\graphics\gui\interface\window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\control\button-interface.cpp">
+      <Filter>code\graphics\gui\interface\button</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\control\window-blueprint.cpp">
+      <Filter>code\graphics\gui\blueprint\window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\control\button-blueprint.cpp">
+      <Filter>code\graphics\gui\blueprint\button</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\events\events.cpp">
+      <Filter>code\events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\control\panel-blueprint.cpp">
+      <Filter>code\graphics\gui\blueprint\panel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\control\panel-win.cpp">
+      <Filter>code\graphics\gui\win\panel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\control\panel-interface.cpp">
+      <Filter>code\graphics\gui\interface\panel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\transformable\transformable.cpp">
+      <Filter>code\graphics\transformable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\render\shader.cpp">
+      <Filter>code\graphics\render\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\render\mesh.cpp">
+      <Filter>code\graphics\render\mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\render\cube.cpp">
+      <Filter>code\graphics\render\mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\render\scene.cpp">
+      <Filter>code\graphics\render\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\render\observer.cpp">
+      <Filter>code\graphics\render\observer</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
