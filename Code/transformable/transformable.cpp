@@ -9,6 +9,7 @@ namespace vrt {
 		rotation_ = glm::vec3(0.0f, 0.0f, 0.0f);
 		scale_ = glm::vec3(1.0f, 1.0f, 1.0f);
 		to_update_ = true;
+		notify("object changed");
 	}
 
 	Transformable::Transformable(glm::vec3 position)
@@ -18,6 +19,7 @@ namespace vrt {
 		scale_ = glm::vec3(1.0f, 1.0f, 1.0f);
 		matrix_ = glm::mat4();
 		to_update_ = true;
+		notify("object changed");
 	}
 
 	Transformable::Transformable(float pos_x, float pos_y, float pos_z)
@@ -27,6 +29,7 @@ namespace vrt {
 		scale_ = glm::vec3(1.0f, 1.0f, 1.0f);
 		matrix_ = glm::mat4();
 		to_update_ = true;
+		notify("object changed");
 	}
 
 	Transformable::Transformable(const Transformable& other)
@@ -36,6 +39,7 @@ namespace vrt {
 		scale_ = other.scale_;
 		matrix_ = glm::mat4();
 		to_update_ = true;
+		notify("object changed");
 	}
 
 	Transformable::Transformable(Transformable&& other)noexcept
@@ -45,6 +49,7 @@ namespace vrt {
 		scale_ = std::move(other.scale_);
 		matrix_ = glm::mat4();
 		to_update_ = true;
+		notify("object changed");
 	}
 
 	Transformable& Transformable::operator=(const Transformable& other)
@@ -59,6 +64,7 @@ namespace vrt {
 		rotation_ = other.rotation_;
 		scale_ = other.scale_;
 		to_update_ = true;
+		notify("object changed");
 
 		return *this;
 	}
@@ -74,6 +80,7 @@ namespace vrt {
 		rotation_ = std::move(other.rotation_);
 		scale_ = std::move(other.scale_);
 		to_update_ = true;
+		notify("object changed");
 
 		return *this;
 	}
@@ -82,6 +89,7 @@ namespace vrt {
 	{
 		this->position_ = position;
 		to_update_ = true;
+		notify("object changed");
 	}
 
 	void Transformable::setPosition(float x, float y, float z)
@@ -90,30 +98,35 @@ namespace vrt {
 		this->position_.y = y;
 		this->position_.z = z;
 		to_update_ = true;
+		notify("object changed");
 	}
 
 	void Transformable::setPositionX(float x)
 	{
 		this->position_.x = x;
 		to_update_ = true;
+		notify("object changed");
 	}
 
 	void Transformable::setPositionY(float y)
 	{
 		this->position_.y = y;
 		to_update_ = true;
+		notify("object changed");
 	}
 
 	void Transformable::setPositionZ(float z)
 	{
 		this->position_.z = z;
 		to_update_ = true;
+		notify("object changed");
 	}
 
 	void Transformable::setRotation(glm::vec3 rotation)
 	{
 		this->rotation_ = rotation;
 		to_update_ = true;
+		notify("object changed");
 	}
 
 	void Transformable::setRotation(float x, float y, float z)
@@ -122,30 +135,35 @@ namespace vrt {
 		this->rotation_.y = y;
 		this->rotation_.z = z;
 		to_update_ = true;
+		notify("object changed");
 	}
 
 	void Transformable::setRotationX(float x)
 	{
 		this->rotation_.x = x;
 		to_update_ = true;
+		notify("object changed");
 	}
 
 	void Transformable::setRotationY(float y)
 	{
 		this->rotation_.y = y;
 		to_update_ = true;
+		notify("object changed");
 	}
 
 	void Transformable::setRotationZ(float z)
 	{
 		this->rotation_.z = z;
 		to_update_ = true;
+		notify("object changed");
 	}
 
 	void Transformable::setScale(glm::vec3 scale)
 	{
 		this->scale_ = scale;
 		to_update_ = true;
+		notify("object changed");
 	}
 
 	void Transformable::setScale(float x, float y, float z)
@@ -154,24 +172,28 @@ namespace vrt {
 		this->scale_.y = y;
 		this->scale_.z = z;
 		to_update_ = true;
+		notify("object changed");
 	}
 
 	void Transformable::setScaleX(float x)
 	{
 		this->scale_.x = x;
 		to_update_ = true;
+		notify("object changed");
 	}
 
 	void Transformable::setScaleY(float y)
 	{
 		this->scale_.y = y;
 		to_update_ = true;
+		notify("object changed");
 	}
 
 	void Transformable::setScaleZ(float z)
 	{
 		this->scale_.z = z;
 		to_update_ = true;
+		notify("object changed");
 	}
 
 	glm::vec3 Transformable::getPosition() const
@@ -250,6 +272,7 @@ namespace vrt {
 		matrix_ = glm::rotate(matrix_, glm::radians(rotation_.z), glm::vec3(0.0, 0.0, 1.0));
 
 		matrix_ = glm::scale(matrix_, scale_);
+		notify("object changed");
 		to_update_ = false;
 	}
 }

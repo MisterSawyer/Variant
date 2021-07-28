@@ -7,11 +7,11 @@
 #include <GLM/gtc/matrix_transform.hpp>
 #include <GLM/gtc/type_ptr.hpp>
 #include <GLM/gtx/quaternion.hpp>
-
+#include "../Code/render/observer.h"
 
 namespace vrt {
 
-	class Transformable
+	class Transformable: public utils::Subject
 	{
 	public:
 		Transformable();

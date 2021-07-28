@@ -4,6 +4,7 @@
 #include "panel-blueprint.h"
 #include "../render/observer.h"
 #include "../render/scene.h"
+#include "../render/camera.h"
 
 namespace vrt::gui
 {
@@ -14,14 +15,19 @@ namespace vrt::gui
 		virtual ~PanelInterface();
 
 		virtual void show(int cmd_show) = 0;
-		void update(const std::string& message_from_subject);
-
 		void setScene(render::Scene* scene);
+		virtual void render();
+
+		render::Camera & getCamera();
+
 	protected:
 		render::Scene* scene;
+		render::Camera camera;
 
-		//void handleEvent(const event::Event& event) final;
+		void handleEvent(const event::Event& event) final;
+		void update(const std::string& message_from_subject) override;
 
 	private:
+
 	};
 }

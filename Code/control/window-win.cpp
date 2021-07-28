@@ -140,7 +140,7 @@ namespace vrt::gui
 
 		case WM_PAINT:
 		{
-			new_event.type = event::EventType::Repaint;
+			new_event.type = event::EventType::Repainted;
 			break;
 		}
 		case WM_SIZE:

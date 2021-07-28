@@ -12,13 +12,14 @@ namespace vrt::gui {
 		~PanelWin();
 
 		void show(int cmd_show);
-
+		void render() override;
 	protected:
+		void propagateEvent(const event::Event& event) final;
 		LRESULT __stdcall procedure(HWND window, UINT message, WPARAM wparam, LPARAM lparam) override;
 	private:
 		bool createVariantPanelClass(const PanelBlueprint & blueprint);
-
-		
+		glm::vec2 mouse_position;
+		HDC device_context_handle;
 		HGLRC render_context_handle;
 	};
 }

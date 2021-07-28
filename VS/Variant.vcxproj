@@ -157,6 +157,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Code\chemistry\pdb.cpp" />
+    <ClCompile Include="..\Code\chemistry\protein.cpp" />
     <ClCompile Include="..\Code\control\abstract-gui-factory.cpp" />
     <ClCompile Include="..\Code\control\button-blueprint.cpp" />
     <ClCompile Include="..\Code\control\button-interface.cpp" />
@@ -167,6 +169,7 @@
     <ClCompile Include="..\Code\control\gui-win-factory.cpp" />
     <ClCompile Include="..\Code\control\panel-blueprint.cpp" />
     <ClCompile Include="..\Code\control\panel-interface.cpp" />
+    <ClCompile Include="..\Code\control\panel-procedure.cpp" />
     <ClCompile Include="..\Code\control\panel-win.cpp" />
     <ClCompile Include="..\Code\control\window-blueprint.cpp" />
     <ClCompile Include="..\Code\control\window-interface.cpp" />
@@ -175,11 +178,16 @@
     <ClCompile Include="..\code\log\log.cpp" />
     <ClCompile Include="..\Code\main.cpp" />
     <ClCompile Include="..\code\mathematics\mathematics.cpp" />
+    <ClCompile Include="..\Code\render\camera.cpp" />
+    <ClCompile Include="..\Code\render\colors.cpp" />
     <ClCompile Include="..\Code\render\cube.cpp" />
+    <ClCompile Include="..\Code\render\cylinder.cpp" />
     <ClCompile Include="..\Code\render\mesh.cpp" />
+    <ClCompile Include="..\Code\render\model.cpp" />
     <ClCompile Include="..\Code\render\observer.cpp" />
     <ClCompile Include="..\Code\render\scene.cpp" />
     <ClCompile Include="..\Code\render\shader.cpp" />
+    <ClCompile Include="..\Code\render\sphere.cpp" />
     <ClCompile Include="..\Code\transformable\transformable.cpp" />
     <ClCompile Include="..\Code\view\view.cpp" />
   </ItemGroup>
@@ -190,6 +198,8 @@
     <ClInclude Include="..\code\chemistry\chemistry.h" />
     <ClInclude Include="..\code\chemistry\model.h" />
     <ClInclude Include="..\Code\chemistry\pdb.h" />
+    <ClInclude Include="..\Code\chemistry\protein.h" />
+    <ClInclude Include="..\Code\chemistry\residue-types.h" />
     <ClInclude Include="..\Code\control\abstract-gui-factory.h" />
     <ClInclude Include="..\Code\control\button-blueprint.h" />
     <ClInclude Include="..\code\control\button-win.h" />
@@ -207,13 +217,17 @@
     <ClInclude Include="..\code\events\events.h" />
     <ClInclude Include="..\code\log\log.h" />
     <ClInclude Include="..\code\mathematics\mathematics.h" />
+    <ClInclude Include="..\Code\render\camera.h" />
+    <ClInclude Include="..\Code\render\colors.h" />
     <ClInclude Include="..\Code\render\cube.h" />
+    <ClInclude Include="..\Code\render\cylinder.h" />
     <ClInclude Include="..\Code\render\mesh.h" />
     <ClInclude Include="..\Code\render\model.h" />
     <ClInclude Include="..\Code\render\observer.h" />
     <ClInclude Include="..\code\render\render.h" />
     <ClInclude Include="..\Code\render\scene.h" />
     <ClInclude Include="..\Code\render\shader.h" />
+    <ClInclude Include="..\Code\render\sphere.h" />
     <ClInclude Include="..\Code\transformable\transformable.h" />
     <ClInclude Include="..\code\view\view.h" />
   </ItemGroup>

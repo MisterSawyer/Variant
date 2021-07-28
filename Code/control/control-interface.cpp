@@ -13,18 +13,27 @@ namespace vrt::gui
 		setID(ID_arg);
 		setParent(parent);
 
-		LOG_INF("ControlInterface() id: " << ID_arg);
-	}
+		if (getParent() != nullptr)
+		{
+			getParent()->addChild(this);
+		}
 
-	ControlInterface::ControlInterface(const ControlInterface& other)
-	{
-		// TODO
+		LOG_INF("ControlInterface() id: " << ID_arg);
 	}
 
 	ControlInterface::~ControlInterface()
 	{
+		if (getParent() != nullptr)
+		{
+			getParent()->deleteChild(this);
+		}
+
+		for (auto& child : children)
+		{
+			child->setParent(nullptr);
+		}
+
 		LOG_INF("~ControlInterface()");
-		// TODO
 	}
 
 	void ControlInterface::handleEvent(const event::Event& event)
@@ -32,15 +41,40 @@ namespace vrt::gui
 		LOG_WAR("Default handleEvent for "<<getControlName());
 	}
 
-	ControlInterface& ControlInterface::operator=(const ControlInterface& other)
+	void ControlInterface::propagateEvent(const event::Event& event)
 	{
-		// TODO: tu wstawiæ instrukcjê return
-		return *this;
+		LOG_WAR("Default propagateEvent for " << getControlName());
 	}
 
 	ControlInterface::operator bool() const noexcept
 	{
 		return initialized;
+	}
+
+	void ControlInterface::addChild(ControlInterface* child)
+	{
+		auto it = std::find(children.begin(), children.end(), child);
+		if (it == children.end())
+		{
+			children.push_back(child);
+		}
+		else
+		{
+			LOG_WAR("Child already exists.");
+		}
+	}
+
+	void ControlInterface::deleteChild(ControlInterface* child)
+	{
+		auto it = std::find(children.begin(), children.end(), child);
+		if (it != children.end())
+		{
+			children.erase(it);
+		}
+		else
+		{
+			LOG_WAR("Child does not exist.");
+		}
 	}
 
 	void ControlInterface::setPosition(glm::ivec2 position)
@@ -95,7 +129,7 @@ namespace vrt::gui
 		return parent;
 	}
 
-	unsigned int ControlInterface::getID()
+	unsigned int ControlInterface::getID() const
 	{
 		return ID;
 	}

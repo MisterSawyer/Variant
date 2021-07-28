@@ -11,9 +11,6 @@ namespace vrt::gui
 	ControlWin::ControlWin(const ControlBlueprint& blueprint, short ID)
 	{
 		LOG_INF("ControlWin() "<< ID);
-		/*
-		* Set variables for this particular control
-		*/
 
 		setHMenu(reinterpret_cast<HMENU>(ID));
 		setClassType(blueprint.getControlClassName());
@@ -28,7 +25,7 @@ namespace vrt::gui
 
 	bool ControlWin::unregisterClass(LPCSTR class_)
 	{
-		/*
+		
 		if (!UnregisterClass(class_, instance))
 		{
 			LOG_ERR("Unregistering class " + std::string(class_) + " failed. " + log::GetLastErrorAsString());
@@ -38,7 +35,7 @@ namespace vrt::gui
 		{
 			LOG_INF("Class " + std::string(class_) + " destroyed.");
 		}
-		*/
+		
 		return true;
 	}
 
@@ -105,11 +102,13 @@ namespace vrt::gui
 		return control != nullptr ? control->procedure(window, message, wparam, lparam) : DefWindowProc(window, message, wparam, lparam);
 	}
 
+	LRESULT __stdcall ControlWin::procedure(HWND window, UINT message, WPARAM wparam, LPARAM lparam)
+	{
+		return CallWindowProcA(default_procedure, window, message, wparam, lparam);
+	}
+
 	bool ControlWin::create(const ControlBlueprint& blueprint, HWND parent_handle)
 	{
-		/*
-		* Tutaj w³aœciwie mozna od razu ³apaæ default_procedure
-		*/
 		WNDCLASS control_class_type_default;
 		if (!GetClassInfo(reinterpret_cast<HINSTANCE>(GetModuleHandle(nullptr)), getClassType().c_str(), &control_class_type_default))
 		{
@@ -138,10 +137,7 @@ namespace vrt::gui
 		return true;
 	}
 
-	LRESULT __stdcall ControlWin::procedure(HWND window, UINT message, WPARAM wparam, LPARAM lparam)
-	{
-		return CallWindowProcA(default_procedure, window, message, wparam, lparam);
-	}
+
 
 	void ControlWin::setHandle(HWND handle_arg)
 	{

@@ -9,6 +9,13 @@
 #include "../Code/log/log.h"
 
 #include "../Code/view/view.h"
+#include "../Code/render/shader.h"
+
+#include "../Code/render/cube.h"
+#include "../Code/render/sphere.h"
+#include "../Code/render/cylinder.h"
+
+#include "../Code/chemistry/pdb.h"
 
  // Windows.h
 
@@ -49,6 +56,25 @@ bool registerWindowClasses(HINSTANCE instance)
 
 //using namespace Gdiplus;
 
+vrt::Transformable calculateTransformation(const glm::vec3 & A, const glm::vec3 & B)
+{
+	vrt::Transformable tr;
+	double d = glm::distance(A, B);
+	tr.setScaleX(0.1);
+	tr.setScaleZ(0.1);
+	tr.setScaleY(d);
+	tr.setPosition(A);
+	
+	double k = glm::degrees(glm::atan((A.y - B.y), (A.x - B.x)));
+	tr.setRotationZ(k);
+
+	k = glm::degrees(glm::atan((A.z - B.z), (A.x - B.x)));
+	tr.setRotationY(k);
+
+	return tr;
+}
+
+
 int main()
 {
 	int cmdshow = SW_SHOW;
@@ -60,47 +86,103 @@ int main()
 	window_blueprint.position.x = 500;
 	window_blueprint.position.y = 200;
 	window_blueprint.size.x = 800;
-	window_blueprint.size.y = 600;
+	window_blueprint.size.y = 800;
+	window_blueprint.name = "window";
 
 	button_blueprint.position.x = 120;
 	button_blueprint.position.y = 100;
 	button_blueprint.size.x = 200;
 	button_blueprint.size.y = 50;
+	button_blueprint.name = "button";
 
-
-	panel_blueprint.position.x = 350;
+	panel_blueprint.position.x = 20;
 	panel_blueprint.position.y = 20;
-	panel_blueprint.size.x = 250;
-	panel_blueprint.size.y = 200;
+	panel_blueprint.size.x = 760;
+	panel_blueprint.size.y = 760;
+	panel_blueprint.name = "panel";
 
 	std::shared_ptr<vrt::gui::GUIWinFactory> factory = std::make_shared<vrt::gui::GUIWinFactory>();
 
 	vrt::gui::View view0(factory);
 	vrt::gui::WindowInterface * window = view0.createWindow(window_blueprint);
-	view0.createButton(button_blueprint, window, 1);
+	auto btn = view0.createButton(button_blueprint, window, 1);
 	auto panel = view0.createPanel(panel_blueprint, window, 2);
 	window->show(1);
 	panel->show(1);
+
+
+	vrt::render::Shader sh;
+	sh.loadFromFiles("../data/shaders/vertex.vert", "../data/shaders/fragment.frag");
+
+
+	vrt::render::Scene sc;
+	sc.setShader(&sh);
+
+	vrt::render::CubeMesh cuber_mesh;
+	vrt::render::SphereMesh sphere;
+	vrt::render::CylinderMesh cylinder;
+
+	vrt::data::PDB file;
+	file.loadFromFile("../data/pdb/1iyj.pdb");
+	std::vector<std::unique_ptr<vrt::render::Model>> models;
+
+	vrt::render::Model camera_center(&sphere);
+	camera_center.setScale(0.1, 0.1, 0.1);
+	camera_center.setColor(glm::vec4(1, 1, 1, 0.25));
+
+	float scale = 1;
+
+	for (unsigned int i=0; i< file.getAtoms().size(); i++)
+	{
+		models.push_back(std::make_unique< vrt::render::Model>(vrt::render::Model(&sphere)));
+		models.back()->setPosition(file.getAtoms()[i].position);
+		
+
+		if (file.getAtoms()[i].element == "C")
+		{
+			models.back()->setScale(scale *1.7, scale*1.7, scale * 1.7);
+			models.back()->setColor(vrt::render::Color::DarkGray);
+		}
+		if (file.getAtoms()[i].element == "H")
+		{
+			models.back()->setScale(scale * 1.2, scale * 1.2, scale * 1.2);
+			models.back()->setColor(vrt::render::Color::White);
+		}
+		if (file.getAtoms()[i].element == "N")
+		{
+			models.back()->setScale(scale * 1.55, scale * 1.55, scale * 1.55);
+			models.back()->setColor(vrt::render::Color::Blue);
+		}
+		if (file.getAtoms()[i].element == "O")
+		{
+			models.back()->setScale(scale * 1.52, scale * 1.52, scale * 1.52);
+			models.back()->setColor(vrt::render::Color::Red);
+		}
+
+		if (file.getAtoms()[i].element == "S")
+		{
+			models.back()->setScale(scale * 1.8, scale * 1.8, scale * 1.8);
+			models.back()->setColor(vrt::render::Color::DarkYellow);
+		}
+
+
+		sc.addModel(models.back().get());
+	}
+
+	panel->getCamera().setTarget(0, 20, 0);
+	panel->getCamera().setDistance(50);
+	sc.addModel(&camera_center);
+
+	panel->setScene(&sc);
 
 	MSG msgcontainer = { 0 };
 	while (GetMessageA(&msgcontainer, 0, 0, 0) > 0)
 	{
 		TranslateMessage(&msgcontainer);
 		DispatchMessageA(&msgcontainer);
+		//
+		camera_center.setPosition(panel->getCamera().getTarget());
 	}
-
-
-
-
-
-
-
-	model.draw();
-	panel.sendEvent(repaint);
-
-
-
-
 
 
 

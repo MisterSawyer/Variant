@@ -1,6 +1,7 @@
 #include "panel-interface.h"
 #include <iostream>
 #include "../log/log.h"
+#include <GLM/glm.hpp>
 
 namespace vrt::gui
 {
@@ -8,6 +9,14 @@ namespace vrt::gui
 		: ControlInterface(ID, blueprint, parent)
 	{
 		LOG_INF("PanelInterface()");
+		camera.setViewportSize(getSize());
+
+
+	}
+
+	render::Camera& PanelInterface::getCamera()
+	{
+		return camera;
 	}
 
 	PanelInterface::~PanelInterface()
@@ -17,19 +26,48 @@ namespace vrt::gui
 
 	void PanelInterface::update(const std::string& message_from_subject)
 	{
-		 //TODO event paint
+		handleEvent(event::Event(event::EventType::Invalidated)); // wysoko poziomowe
+		propagateEvent(event::Event(event::EventType::Invalidated)); // nisko poziomowe
 	}
 
 	void PanelInterface::setScene(render::Scene* scene_arg)
 	{
 		scene = scene_arg;
+		if (scene != nullptr)
+		{
+			scene->attach(this);
+			handleEvent(event::Event(event::EventType::Invalidated));
+			propagateEvent(event::Event(event::EventType::Invalidated)); // nisko poziomowe
+		}
+		else
+		{
+			LOG_WAR("Setting empty scene");
+		}
 	}
 
-	/*
+	void PanelInterface::render()
+	{
+		LOG_WAR("Using default empty render method");
+	}
+
+
 	void PanelInterface::handleEvent(const event::Event& event)
 	{
-		std::cout << (int)event.type << std::endl;
-		//TODO
+		switch (event.type)
+		{
+		case event::EventType::Invalidated:
+		{
+			break;
+		}
+		case event::EventType::Repainted:
+		{
+			break;
+		}
+		default:
+		{
+			break;
+		}
+		}
 	}
-	*/
+
 }

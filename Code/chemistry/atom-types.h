@@ -2,7 +2,7 @@
 #include <string>
 
 
-namespace vrt::atom
+namespace vrt::chemistry
 {
 
 	enum class AtomType
@@ -15,8 +15,8 @@ namespace vrt::atom
 	public:
 
 	private:
-		int max_connections_; //-1 for unknown
-		AtomType type_;
+		int max_connections; //-1 for unknown
+		AtomType type;
 	};
 
 	bool loadAtomInfo(const std::string & file);

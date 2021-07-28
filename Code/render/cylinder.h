@@ -4,11 +4,11 @@
 
 namespace vrt::render
 {
-	class CubeMesh : public Mesh
+	class CylinderMesh : public Mesh
 	{
 	public:
-		CubeMesh();
-		virtual void draw() override; 
+		CylinderMesh();
+		virtual void draw() override;
 
 	private:
 		std::vector <GLuint> indices;

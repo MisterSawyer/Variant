@@ -17,7 +17,6 @@ namespace vrt::gui
 
 	void WindowInterface::handleEvent(const event::Event& event)
 	{
-		std::cout << (int)event.type << std::endl;
 		//TODO
 	}
 }

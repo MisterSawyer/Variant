@@ -103,6 +103,21 @@
     <Filter Include="code\graphics\render\observer">
       <UniqueIdentifier>{9e678aec-8e5e-4bde-a856-6f2fa9a88503}</UniqueIdentifier>
     </Filter>
+    <Filter Include="code\graphics\render\colors">
+      <UniqueIdentifier>{633af5cb-7f34-4616-8e59-c32ab40eb954}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\chemistry\protein">
+      <UniqueIdentifier>{567fdca5-3005-4b82-826b-33197b697e21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\chemistry\atom">
+      <UniqueIdentifier>{5c51371d-f6cc-4404-97a0-93756e11327e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\chemistry\residue">
+      <UniqueIdentifier>{011d6605-6f13-4c0b-8936-5efbe60b534c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\graphics\render\camera">
+      <UniqueIdentifier>{ca1d845e-60fc-487f-8716-5972513fbf62}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\code\mathematics\mathematics.h">
@@ -115,15 +130,6 @@
       <Filter>code\graphics\render</Filter>
     </ClInclude>
     <ClInclude Include="..\code\chemistry\chemistry.h">
-      <Filter>code\chemistry</Filter>
-    </ClInclude>
-    <ClInclude Include="..\code\chemistry\atom.h">
-      <Filter>code\chemistry</Filter>
-    </ClInclude>
-    <ClInclude Include="..\code\chemistry\atom-types.h">
-      <Filter>code\chemistry</Filter>
-    </ClInclude>
-    <ClInclude Include="..\code\chemistry\bond.h">
       <Filter>code\chemistry</Filter>
     </ClInclude>
     <ClInclude Include="..\code\chemistry\model.h">
@@ -201,6 +207,33 @@
     <ClInclude Include="..\Code\render\observer.h">
       <Filter>code\graphics\render\observer</Filter>
     </ClInclude>
+    <ClInclude Include="..\Code\render\cylinder.h">
+      <Filter>code\graphics\render\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\render\sphere.h">
+      <Filter>code\graphics\render\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\render\colors.h">
+      <Filter>code\graphics\render\colors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\chemistry\protein.h">
+      <Filter>code\chemistry\protein</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\chemistry\bond.h">
+      <Filter>code\chemistry\atom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\chemistry\atom-types.h">
+      <Filter>code\chemistry\atom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\chemistry\atom.h">
+      <Filter>code\chemistry\atom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\chemistry\residue-types.h">
+      <Filter>code\chemistry\residue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\render\camera.h">
+      <Filter>code\graphics\render\camera</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\code\mathematics\mathematics.cpp">
@@ -277,6 +310,30 @@
     </ClCompile>
     <ClCompile Include="..\Code\render\observer.cpp">
       <Filter>code\graphics\render\observer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\render\model.cpp">
+      <Filter>code\graphics\render\model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\render\cylinder.cpp">
+      <Filter>code\graphics\render\mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\render\sphere.cpp">
+      <Filter>code\graphics\render\mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\render\colors.cpp">
+      <Filter>code\graphics\render\colors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\control\panel-procedure.cpp">
+      <Filter>code\graphics\gui\win\panel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\chemistry\pdb.cpp">
+      <Filter>code\data\pdb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\chemistry\protein.cpp">
+      <Filter>code\chemistry\protein</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\render\camera.cpp">
+      <Filter>code\graphics\render\camera</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

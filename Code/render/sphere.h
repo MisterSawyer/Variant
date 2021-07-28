@@ -1,14 +1,16 @@
 #pragma once
+
+#pragma once
 #include "mesh.h"
 #include <GL/glew.h>
 
 namespace vrt::render
 {
-	class CubeMesh : public Mesh
+	class SphereMesh : public Mesh
 	{
 	public:
-		CubeMesh();
-		virtual void draw() override; 
+		SphereMesh();
+		virtual void draw() override;
 
 	private:
 		std::vector <GLuint> indices;

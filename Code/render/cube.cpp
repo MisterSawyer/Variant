@@ -1,7 +1,6 @@
 #include "../Code/log/log.h"
 
 #include "cube.h"
-#include <GL/glew.h>
 #include <GLM/glm.hpp>
 
 namespace vrt::render
@@ -9,8 +8,6 @@ namespace vrt::render
 
 	CubeMesh::CubeMesh()
 	{
-
-
 		positions.push_back(glm::vec3(-0.5f, -0.5f, 0.5f)); normals.push_back(glm::vec3(0.0f, 0.0f, 1.0f)); uvs.push_back(glm::vec2(0.0f, 0.0f));
 		positions.push_back(glm::vec3(-0.5f, 0.5f, 0.5f)); normals.push_back(glm::vec3(0.0f, 0.0f, 1.0f)); uvs.push_back(glm::vec2(0.0f, 1.0f));
 		positions.push_back(glm::vec3(0.5f, -0.5f, 0.5f)); normals.push_back(glm::vec3(0.0f, 0.0f, 1.0f)); uvs.push_back(glm::vec2(1.0f, 0.0f));
@@ -45,7 +42,7 @@ namespace vrt::render
 		const size_t normals_size = normals.size() * sizeof(glm::vec3);
 		const size_t uvs_size = uvs.size() * sizeof(glm::vec2);
 
-		std::vector <GLuint> indices;
+
 
 		indices.push_back(0); indices.push_back(1); indices.push_back(2); indices.push_back(2); indices.push_back(1); indices.push_back(3);
 		indices.push_back(4); indices.push_back(5); indices.push_back(6); indices.push_back(6); indices.push_back(5); indices.push_back(7);
@@ -85,6 +82,13 @@ namespace vrt::render
 		glBindVertexArray(0);
 	}
 
-
+	void CubeMesh::draw()
+	{
+		glBindVertexArray(vao);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+		glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, (void*)0);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+		glBindVertexArray(0);
+	}
 
 }

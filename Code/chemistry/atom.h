@@ -1,17 +1,29 @@
 #pragma once
 
 #include <optional>
-
+#include <array>
+#include "residue-types.h"
 #include "atom-types.h"
+#include <GLM/glm.hpp>
 
-namespace vrt::atom
+namespace vrt::chemistry
 {
-	class Atom
+	struct Atom
 	{
-	public:
+		unsigned int ID;
 
-	private:
-		unsigned int ID_;
-		std::optional<AtomInfo> info_;
+		std::string name;
+		char alt_loc;
+		char chain;
+		unsigned int residue_id;
+		char icode;
+		float occupancy;
+		float temp;
+
+		std::string reside_name; //TODO residue type 
+		glm::vec3 position;
+		std::string element;
+		std::string charge;
+		//TODO AtomInfo * type;
 	};
 }
